@@ -1,14 +1,13 @@
 import React from 'react'
-import { useState, useRef, useNavigate } from 'react';
+import Nav from '../components/Nav';
 
 const Home = () => {
 
-    const navigate = useNavigate;
-    const [name, setName] = useState('');
-    const inputRef = useRef();
     
     return (
     <>
+    <Nav/>
+    <img src="https://via.placeholder.com/60" alt="Placeholder" />
     <h1>home</h1>
     </>
     )
