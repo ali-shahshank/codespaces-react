@@ -1,16 +1,14 @@
-import React from 'react'
+import React from 'react';
 import Nav from '../components/Nav';
+import Box from '@mui/material/Box';
 
 const Home = () => {
-
-    
-    return (
+  return (
     <>
-    <Nav/>
-    <img src="https://via.placeholder.com/60" alt="Placeholder" />
-    <h1>home</h1>
+      <Nav />
+      <Box sx={{ px: 3, py: 4, backgroundColor: 'primary.main' }}></Box>
     </>
-    )
-}
+  );
+};
 
 export default Home;
