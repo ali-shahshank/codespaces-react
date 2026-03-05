@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '../components/Drawer';
+import { Link } from 'react-router';
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
@@ -14,45 +15,67 @@ const Nav = () => {
 
   return (
     <>
-      
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          bgcolor: 'black',
+          m: '0px',
+          px: '24px',
+          py: '24px',
+        }}
+      >
         <AppBar
-          position='static'
+          position="relative"
           sx={{
-            px: 3,
-            py: 2,
+            px: '16px',
+            py: '12px',
+            borderRadius: '100px',
             backgroundColor: '#000000',
             flexGrow: 1,
             display: 'flex',
             flexDirection: 'row',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            border: '1px solid #6C757D',
+            maxWidth: '800px',
           }}
-        > 
+        >
           <Typography
-            variant='h5'
-            component='div'
+            variant="h5"
+            component="div"
             sx={{ fontFamily: 'Marcellus', flexGrow: 1 }}
-          >Portfolio
+          >
+            Portfolio
           </Typography>
-            
+
           <Button
-            variant='outlined'
-            color='inherit'
-            sx={{ borderRadius: 10, display: { xs: 'none', sm: 'block' } }}
+            variant="contained"
+            sx={{
+              borderRadius: 10,
+              display: { xs: 'none', sm: 'block' },
+              backgroundColor: '#FFFFFF',
+              color: '#000000',
+            }}
           >
             Contact
           </Button>
 
           <IconButton
             onClick={handleOpen}
-            size='medium'
-            edge='start'
-            color='inherit'
+            size="medium"
+            edge="start"
+            color="inherit"
             sx={{ display: { xs: 'block', sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
         </AppBar>
-      <Drawer open={open} onClose={handleClose} />
+      </Box>
+      <Drawer
+        open={open}
+        onClose={handleClose}
+      />
     </>
   );
 };
