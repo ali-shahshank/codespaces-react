@@ -6,7 +6,10 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '../components/Drawer';
-import { Link } from 'react-router';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
+const pages = ['WORK', 'ABOUT', 'SERVICES'];
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
@@ -44,16 +47,46 @@ const Nav = () => {
           <Typography
             variant="h5"
             component="div"
-            sx={{ fontFamily: 'Marcellus', flexGrow: 1 }}
+            sx={{
+              fontFamily: 'Marcellus',
+            }}
           >
             Portfolio
           </Typography>
+
+          {/* Nav Links */}
+          <Box
+            sx={{
+              display: { xs: 'none', sm: 'none', md: 'flex' },
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexGrow: 1,
+              gap: 0,
+            }}
+          >
+            {pages.map((page, index) => (
+              <MenuItem
+                key={index}
+                sx={{
+                  display: 'flex',
+                  m: 0,
+                  px: 1.5,
+                  py: 1,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: 6,
+                }}
+              >
+                {page}
+              </MenuItem>
+            ))}
+          </Box>
 
           <Button
             variant="contained"
             sx={{
               borderRadius: 10,
-              display: { xs: 'none', sm: 'block' },
+              display: { xs: 'none', sm: 'none', md: 'block' },
               backgroundColor: '#FFFFFF',
               color: '#000000',
             }}
@@ -61,7 +94,18 @@ const Nav = () => {
             Contact
           </Button>
 
-          <IconButton
+          <Button
+            onClick={handleOpen}
+            sx={{ display: { xs: 'block', sm: 'block', md: 'none' } }}
+          >
+            <img
+              src="/hamburger-menu.svg"
+              alt="menu-icon"
+              loading="lazy"
+            />
+          </Button>
+
+          {/* <IconButton
             onClick={handleOpen}
             size="medium"
             edge="start"
@@ -69,7 +113,7 @@ const Nav = () => {
             sx={{ display: { xs: 'block', sm: 'none' } }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
         </AppBar>
       </Box>
       <Drawer

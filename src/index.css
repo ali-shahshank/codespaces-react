@@ -1,9 +1,20 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
 
 :root {
-  --primary: '#000000';
-  --secondary: '';
-  --tertiary: '';
+  /* Color System */
+  --black: #000000;
+  --white: #ffffff;
+  --noir: '#0A0A0A';
+  --midnight: '#2C2D2D';
+  --umbra: '#606260';
+  --shadow: '#949797';
+  --eclips: '#D3D2D0';
+  --phantom: '#EBEBEF';
+  /* Atlas */
+  --neon-green: '#';
+  --sky-blue: '#';
+  --dark-navy: '#';
 }
 
 body {
