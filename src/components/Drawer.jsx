@@ -12,7 +12,6 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
 export default function CustomDrawer({ open, onClose }) {
-
   const list = (
     <Box
       sx={{ width: 256 }}
@@ -21,8 +20,12 @@ export default function CustomDrawer({ open, onClose }) {
       onKeyDown={onClose}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {['Work', 'About', 'Services'].map((text, index) => (
+          <ListItem
+            key={text}
+            // disablePadding
+            sx={{ px: 2, py: 2, m: 0 }}
+          >
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}

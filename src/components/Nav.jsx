@@ -41,7 +41,8 @@ const Nav = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             border: '1px solid #6C757D',
-            maxWidth: '800px',
+            // maxWidth: '800px',
+            minWidth: '100%',
           }}
         >
           <Typography
